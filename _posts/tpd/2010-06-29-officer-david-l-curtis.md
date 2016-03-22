@@ -1,7 +1,6 @@
 ---
 layout: fallen
 name: Officer David L. Curtis
-dod_circa: TRUE
 categories: tpd
 images:
   - 1.jpg
