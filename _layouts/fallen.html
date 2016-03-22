@@ -23,13 +23,13 @@ layout: default
 <div class="row">
 	<div class="">
 		<div class="col-sm-3">
-			{% if page.images %}
-			<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ page.images.first }}" alt="{{page.name}}" class="img-thumbnail center-block" />
-			{% else %}
 			<p class="text-center">
+				{% if page.images %}
+				<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ page.images.first }}" alt="{{page.name}}" class="img-thumbnail center-block" />
+				{% else %}
 				<i class="fa fa-fw fa-file-image-o fa-5x"></i>
+				{% endif %}
 			</p>
-			{% endif %}
 		</div>
 		<div class="col-sm-9">
 			{{ content }}

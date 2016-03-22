@@ -5,6 +5,7 @@ header_image: home-collage.jpg
 ---
 
 It is with mixed emotions - immense pride and sadness - that our grateful community honors the Hillsborough County First Responders who have died while in the performance of their duties for our citizens.
+{: .lead}
 
 Hillsborough County’s Fallen Heroes – the firefighters, law enforcement, and paramedics are to be forever remembered for their unquestioned valor and sacrifice, serving to defend our community’s commitment to the fundamental principles of safety and justice for all.
 

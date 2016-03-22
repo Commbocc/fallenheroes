@@ -23,11 +23,11 @@ layout: page
 		<a class="thumbnail" href="{{ post.url | prepend: site.baseurl }}">
 			<div class="row">
 				<div class="col-xs-3">
-					<div class="embed-responsive embed-responsive-1by1 text-cente">
+					<div class="embed-responsive embed-responsive-1by1 text-center">
 						{% if post.images %}
 						<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
 						{% else %}
-						<i class="text-muted fa fa-fw fa-file-image-o fa-5x media-object"></i>
+						<i class="text-muted fa fa-fw fa-file-image-o fa-3x media-object"></i>
 						{% endif %}
 					</div>
 				</div>
