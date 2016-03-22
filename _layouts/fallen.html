@@ -1,15 +1,53 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+<header class="page-header">
+	<h2>
+		{{ page.name }}
+		<br>
+		<div class="small">
+			{% if page.dob %}{{ page.dob | date: "%b %-d, %Y" }} - {% endif %}
+			{% if page.dod_circa %}<abbr title="circa">c.</abbr> {{ page.date | date: "%Y" }}{% else %}{{ page.date | date: "%b %-d, %Y" }}{% endif %}
+		</div>
+	</h2>
+</header>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+<ol class="breadcrumb">
+	<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+	<li><a href="{{ '/memorial/' | prepend: site.baseurl }}">Memorial Pages</a></li>
+	<li><a href="{{ site.baseurl }}/{{ page.categories.first }}">{{ page.categories.first | upcase }}</a></li>
+	<li class="active">{{ page.name }}</li>
+</ol>
 
-</article>
+<div class="row">
+	<div class="">
+		<div class="col-sm-3">
+			{% if page.images %}
+			<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ page.images.first }}" alt="{{page.name}}" class="img-thumbnail center-block" />
+			{% else %}
+			<p class="text-center">
+				<i class="fa fa-fw fa-file-image-o fa-5x"></i>
+			</p>
+			{% endif %}
+		</div>
+		<div class="col-sm-9">
+			{{ content }}
+		</div>
+	</div>
+</div>
+
+{% if page.images %}
+<div class="text-center">
+	<hr>
+	<ul class="list-inline">
+		{% for image in page.images %}
+		{% unless forloop.index == 1 %}
+		<li>
+			<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ image }}" alt="{{page.name}}" class="img-thumbnail center-block" />
+		</li>
+		{% endunless %}
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}

@@ -5,22 +5,21 @@ title: Fallen Heroes Fund &amp; Memorial Tribute
 
 # description:
 
+googleanalytics:
+
 baseurl: "/hfh"
+# baseurl: "/fallenheroes"
 
 url: "http://www.hillsboroughsfallenheroes.org" # the base hostname & protocol for your site
 
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
-collections:
-   _fallen:
-      output: true
-
 # Build settings
 markdown: kramdown
 
-paginate: 10
-paginate_path: "/news/:num"
+# paginate: 10
+# paginate_path: "/news/:num"
 
 gems:
  - jekyll-coffeescript
