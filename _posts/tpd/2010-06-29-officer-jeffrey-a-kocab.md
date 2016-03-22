@@ -1,7 +1,6 @@
 ---
 layout: fallen
 name: Officer Jeffrey A. Kocab
-dod_circa: TRUE
 categories: tpd
 images:
   - 1.jpg
