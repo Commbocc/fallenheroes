@@ -16,6 +16,7 @@ body {
 	background: #fff;
 	padding: 15px 30px;
 	min-height: 250px;
+	border: solid 1px #000;
 }
 
 #mainNav {
@@ -32,7 +33,7 @@ body {
 		}
 		.navbar-collapse {
 			height: 40px !important;
-			font-size: 17px;
+			font-size: 16px;
 		}
 	}
 
