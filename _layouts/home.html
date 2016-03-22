@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<header class="page-header">
+	<h2 class="text-center">
+		{{ page.title | upcase }}
+	</h2>
+</header>
+
+<div class="post-content">
+
+	<div class="row">
+		<div class="col-sm-7 col-md-8">
+			{{ content }}
+		</div>
+		<div class="col-sm-5 col-md-4">
+
+			<div class="panel panel-info">
+				<header class="panel-heading">
+					<h4 class="panel-title text-center">
+						Those Most Recently Lost
+					</h4>
+				</header>
+				<div class="list-group">
+					{% for post in site.posts | limit: 4 %}
+					<a href="{{ post.url | prepend: site.baseurl }}" class="list-group-item">
+						<div class="list-group-item-text">
+
+							<div class="media">
+								<div class="media-left text-center">
+									{% if post.images %}
+									<div class="embed-responsive embed-responsive-1by1 text-center" style="width: 50px; height: 50px;">
+										<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
+									</div>
+									{% endif %}
+								</div>
+								<div class="media-body">
+									<h5 class="media-heading">
+										{{ post.name }}
+									</h5>
+									<div class="small">
+										{% if post.dob %}{{ post.dob | date: "%b %-d, %Y" }} - {% endif %}
+										{% if post.dod_circa %}<abbr title="circa">c.</abbr> {{ post.date | date: "%Y" }}{% else %}{{ post.date | date: "%b %-d, %Y" }}{% endif %}
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+				<footer class="panel-footer text-center small">
+					<a href="{{ '/memorial/' | prepend: site.baseurl }}">
+						View All
+					</a>
+				</footer>
+			</div>
+
+		</div>
+	</div>
+
+</div>

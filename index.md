@@ -1,6 +1,6 @@
 ---
-layout: page
-title: HONORING HILLSBOROUGH'S FALLEN FIRST RESPONDERS
+layout: home
+title: Honoring Hillsborough's Fallen First Responders
 header_image: home-collage.jpg
 ---
 
