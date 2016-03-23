@@ -28,3 +28,5 @@ Deputy Longway was an outstanding law enforcement officer. Among his accomplishm
 Deputy Longway leaves behind a wife, two daughters, and three grandchildren.
 
 Deputy Longway, thank you for your service to our nation and to our county. We are proud to have called you a friend and colleague.
+
+{% include video.html type="local" src="/media/deputy-mark-a-longway.mp4" %}
