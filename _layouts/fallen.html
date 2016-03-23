@@ -25,7 +25,8 @@ layout: default
 		<div class="col-sm-3">
 			<p class="text-center">
 				{% if page.images %}
-				<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ page.images.first }}" alt="{{page.name}}" class="img-thumbnail center-block" />
+				{% capture rm_date_str %}{{ page.date | date: "%Y-%m-%d-" }}{% endcapture %}
+				<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: rm_date_str | remove: '.md' }}/{{ page.images.first }}" alt="{{page.name}}" class="img-thumbnail center-block" />
 				{% else %}
 				<i class="fa fa-fw fa-file-image-o fa-5x"></i>
 				{% endif %}
@@ -41,12 +42,10 @@ layout: default
 <div class="text-center">
 	<hr>
 	<ul class="list-inline">
-		{% for image in page.images %}
-		{% unless forloop.index == 1 %}
+		{% for image in page.images | offset: 1 %}
 		<li>
-			<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: '.md' }}/{{ image }}" alt="{{page.name}}" class="img-thumbnail center-block" />
+			<img src="{{ site.baseurl }}/images/fallen/{{ page.path | remove: '_posts/' | remove: rm_date_str | remove: '.md' }}/{{ image }}" alt="{{page.name}}" class="img-thumbnail center-block" />
 		</li>
-		{% endunless %}
 		{% endfor %}
 	</ul>
 </div>

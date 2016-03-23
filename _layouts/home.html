@@ -30,8 +30,9 @@ layout: default
 							<div class="media">
 								<div class="media-left text-center">
 									{% if post.images %}
+									{% capture rm_date_str %}{{ post.date | date: "%Y-%m-%d-" }}{% endcapture %}
 									<div class="embed-responsive embed-responsive-1by1 text-center" style="width: 50px; height: 50px;">
-										<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
+										<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: rm_date_str | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
 									</div>
 									{% endif %}
 								</div>

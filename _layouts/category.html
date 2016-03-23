@@ -19,13 +19,13 @@ layout: page
 <ul class="list-unstyled list-fallen-heroes">
 	{% for post in site.categories.[page.category] %}
 	<li class="fallen-hero">
-
 		<a class="thumbnail" href="{{ post.url | prepend: site.baseurl }}">
 			<div class="row">
 				<div class="col-xs-3">
 					<div class="embed-responsive embed-responsive-1by1 text-center">
 						{% if post.images %}
-						<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
+						{% capture rm_date_str %}{{ post.date | date: "%Y-%m-%d-" }}{% endcapture %}
+						<img src="{{ site.baseurl }}/images/fallen/{{ post.path | remove: '_posts/' | remove: rm_date_str | remove: '.md' }}/{{ post.images.first }}" alt="{{post.name}}" class="img-responsive center-block" />
 						{% else %}
 						<i class="text-muted fa fa-fw fa-file-image-o fa-3x media-object"></i>
 						{% endif %}
