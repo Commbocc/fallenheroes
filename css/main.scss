@@ -9,7 +9,7 @@
 
 body {
 	border-top: 3px solid #175198;
-	background: url(http://commbocc.github.io/fallenheroes/images/body-bg.png) repeat-x #222;
+	background: url("{{ '/images/body-bg.png' | prepend: site.baseurl }}") repeat-x #222;
 }
 
 #mainContainer {
