@@ -2,12 +2,14 @@
 layout: default
 ---
 
+<ol class="breadcrumb small">
+	<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+	<li class="active">{{ page.title }}</li>
+</ol>
+
 <header class="page-header">
 	<h2>
 		{{ page.title }}
-		{% if page.ext_link %}
-		<small><a href="{{ page.ext_link }}" target="_blank"><i class="fa fa-fw fa-external-link"></i></a></small>
-		{% endif %}
 	</h2>
 </header>
 

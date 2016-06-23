@@ -2,23 +2,23 @@
 layout: default
 ---
 
-<header class="page-header">
-	<h2>
-		{{ page.name }}
-		<br>
-		<div class="small">
-			{% if page.dob %}{{ page.dob | date: "%b %-d, %Y" }} - {% endif %}
-			{% if page.dod_circa %}<abbr title="circa">c.</abbr> {{ page.date | date: "%Y" }}{% else %}{{ page.date | date: "%b %-d, %Y" }}{% endif %}
-		</div>
-	</h2>
-</header>
-
-<ol class="breadcrumb">
+<ol class="breadcrumb small">
 	<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
 	<li><a href="{{ '/memorial/' | prepend: site.baseurl }}">Memorial Pages</a></li>
 	<li><a href="{{ site.baseurl }}/{{ page.categories.first }}">{{ page.categories.first | upcase }}</a></li>
 	<li class="active">{{ page.name }}</li>
 </ol>
+
+<header class="page-header">
+	<h2>
+		{{ page.name }}
+		<br>
+		<small>
+			{% if page.dob %}{{ page.dob | date: "%b %-d, %Y" }} - {% endif %}
+			{% if page.dod_circa %}<abbr title="circa">c.</abbr> {{ page.date | date: "%Y" }}{% else %}{{ page.date | date: "%b %-d, %Y" }}{% endif %}
+		</small>
+	</h2>
+</header>
 
 <div class="row">
 	<div class="">
