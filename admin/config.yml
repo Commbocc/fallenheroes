@@ -1,0 +1,12 @@
+# config.yml
+
+backend:
+  name: hc-fallen-heroes
+  branch: gh-pages
+media_folder: 'assets/uploads'
+collections:
+  - name: 'heroes'
+    label: 'Fallen Heroes'
+    folder: '_posts/'
+    fields:
+      - { name: Title }
