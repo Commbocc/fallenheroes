@@ -10,7 +10,7 @@ googleanalytics: UA-63036279-6
 # baseurl: "/hfh"
 baseurl: "/"
 
-url: "http://www.hillsboroughsfallenheroes.org" # the base hostname & protocol for your site
+url: "//www.hillsboroughsfallenheroes.org" # the base hostname & protocol for your site
 
 # twitter_username: jekyllrb
 # github_username:  jekyll
