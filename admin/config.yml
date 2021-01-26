@@ -8,5 +8,6 @@ collections:
   - name: 'heroes'
     label: 'Fallen Heroes'
     folder: '_posts/'
+    create: true
     fields:
       - { name: Title }
