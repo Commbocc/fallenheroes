@@ -1,7 +1,7 @@
 # config.yml
 
 backend:
-  name: hc-fallen-heroes
+  name: git-gateway
   branch: gh-pages
 media_folder: 'assets/uploads'
 collections:
