@@ -18,5 +18,29 @@ collections:
           widget: 'select',
           options: ['left', 'center', 'right'],
         }
+      - {
+          label: 'Organization',
+          name: 'organization',
+          widget: 'relation',
+          collection: 'organizations',
+          search_fields: ['name', 'abbreviation'],
+          value_field: 'name',
+          display_fields: ['name'],
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      
+      - {
+          label: 'Images',
+          name: 'images',
+          widget: 'list',
+          required: false,
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
+  - name: 'organizations'
+    label: 'Organization'
+    folder: '_organizations/'
+    create: true
+    slug: '{{name}}'
+    fields:
+      - { name: name, label: 'Name' }
+      - { name: abbreviation, label: 'Abbreviation' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
