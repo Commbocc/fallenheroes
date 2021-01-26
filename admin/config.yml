@@ -6,8 +6,14 @@ backend:
 media_folder: 'assets/uploads'
 collections:
   - name: 'heroes'
-    label: 'Fallen Heroes'
+    label: 'Fallen Hero'
     folder: '_posts/'
     create: true
     fields:
-      - { name: Title }
+      - { name: name, label: 'Name' }
+      - {
+          name: category,
+          label: 'Category',
+          widget: 'select',
+          options: ['left', 'center', 'right'],
+        }
