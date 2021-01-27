@@ -22,23 +22,13 @@ collections:
               widget: string,
               hint: 'This is used for the site title',
             }
-          - {
-              label: 'Navigation Items',
-              name: 'nav_items',
-              widget: 'list',
-              required: true,
-              field:
-                {
-                  label: 'Item',
-                  name: 'item',
-                  widget: 'object',
-                  feilds:
-                    [
-                      { name: 'label', label: 'Label' },
-                      { name: 'url', label: 'URL' },
-                    ],
-                },
-            }
+          - label: 'Navigation Items'
+            name: 'nav_items'
+            widget: 'list'
+            required: true
+            fields:
+              - { name: 'label', label: 'Label', widget: 'string' }
+              - { name: 'url', label: 'URL', widget: 'string' }
 
   - name: 'heroes'
     label: 'Fallen Hero'
