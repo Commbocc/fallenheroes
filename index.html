@@ -1,0 +1,65 @@
+---
+layout: default
+header_image: /assets/images/home-collage.jpg
+---
+
+<header class="page-header">
+  <h2 class="text-center">{{ site.data.home_page.title | upcase }}</h2>
+</header>
+
+<div class="post-content">
+  <div class="row">
+    <div class="col-sm-7 col-md-8">
+      {{ site.data.home_page.body | markdownify }}
+    </div>
+    <div class="col-sm-5 col-md-4">
+      <div class="panel panel-info">
+        <header class="panel-heading">
+          <h4 class="panel-title text-center">Those Most Recently Lost</h4>
+        </header>
+        <div class="list-group">
+          {% for post in site.posts limit: 4 %}
+          <a href="{{ post.url  }}" class="list-group-item">
+            <div class="list-group-item-text">
+              <div class="media">
+                <div class="media-left text-center">
+                  {% if post.images %} {% capture rm_date_str %}{{ post.date |
+                  date: "%Y-%m-%d-" }}{% endcapture %}
+                  <div
+                    class="embed-responsive embed-responsive-1by1 text-center"
+                    style="width: 50px; height: 50px"
+                  >
+                    <img
+                      src="{{ post.images.first }}"
+                      alt="{{post.name}}"
+                      class="img-responsive center-block"
+                    />
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">{{ post.name }}</h5>
+                  <div class="small">
+                    {% if post.dob %}{{ post.dob | date: "%b %-d, %Y" }} - {%
+                    endif %} {% if post.circa %}<abbr title="circa">c.</abbr>
+                    {{ post.date | date: "%Y" }}{% else %}{{ post.date | date:
+                    "%b %-d, %Y" }}{% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+        <footer class="panel-footer text-center small">
+          <a href="/memorial"> View All </a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio autoplay>
+  <source src="/media/song.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>

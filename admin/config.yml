@@ -5,6 +5,46 @@ backend:
   branch: master
 media_folder: 'assets/uploads'
 collections:
+  - label: 'Site Settings'
+    name: 'site'
+    files:
+      - label: 'Navigation'
+        name: 'navigation'
+        file: '_data/navigation.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - label: 'Navigation Items'
+            name: 'nav_items'
+            widget: 'list'
+            required: true
+            fields:
+              - { name: 'label', label: 'Label', widget: 'string' }
+              - { name: 'url', label: 'URL', widget: 'string' }
+      - label: 'Home Page'
+        name: 'home'
+        file: '_data/home_page.json'
+        format: 'json'
+        editor:
+          preview: true
+        fields:
+          - { label: Heading, name: title, widget: string }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - label: 'Settings'
+        name: 'settings'
+        file: '_data/settings.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Google Analytics,
+              name: google_analytics,
+              widget: string,
+              required: false,
+            }
+
   - name: 'heroes'
     label: 'Fallen Hero'
     folder: '_posts/'
@@ -13,10 +53,67 @@ collections:
     fields:
       - { name: name, label: 'Name' }
       - {
-          name: category,
-          label: 'Category',
-          widget: 'select',
-          options: ['left', 'center', 'right'],
+          name: dob,
+          label: 'Date of Birth',
+          widget: 'date',
+          required: false,
+          formate: 'YYYY-MM-DD',
         }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      
+      - {
+          name: date,
+          label: 'Date of Death',
+          widget: 'date',
+          required: true,
+          formate: 'YYYY-MM-DD',
+        }
+      - {
+          name: circa,
+          label: 'Approximate Dates',
+          widget: 'boolean',
+          required: false,
+          default: false,
+          hint: 'Enable this option when exact dates are unknown',
+        }
+      - {
+          label: 'Organization',
+          name: 'categories',
+          widget: 'relation',
+          collection: 'organizations',
+          search_fields: ['name', 'permalink'],
+          value_field: 'permalink',
+          display_fields: ['name'],
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - {
+          label: 'Images',
+          name: 'images',
+          widget: 'list',
+          required: false,
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
+  - name: 'pages'
+    label: 'Page'
+    folder: '_pages/'
+    create: true
+    slug: '{{permalink}}'
+    fields:
+      - { name: title, label: 'Title' }
+      - { name: permalink, label: 'Slug' }
+      - {
+          name: layout,
+          label: 'External Link',
+          widget: 'select',
+          options: ['page', 'home'],
+          default: 'page',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+  - name: 'organizations'
+    label: 'Organization'
+    folder: '_organizations/'
+    create: true
+    slug: '{{permalink}}'
+    fields:
+      - { name: name, label: 'Name' }
+      - { name: permalink, label: 'Abbreviation' }
+      - { name: ext_link, label: 'External Link', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
