@@ -1,6 +1,7 @@
 ---
 name: Hillsborough County Sheriff's Office
 abbreviation: hcso
+permalink: hcso
 ---
 The position of Sheriff came indirectly to Florida from England, when Major General Andrew Jackson introduced the office as he took over the territory from Spain, around 1821. In 1845, the first legislature of Florida enacted a law stipulating that a Sheriff would be elected every two years within every county of the state, and in Hillsborough County, the 47 eligible voters elected John Parker, a former military captain in the Seminole Indian Wars, as their first Sheriff. In the ten years following that time, the Sheriff's Office functioned as a one-man operation. Then, as now, law enforcement was the Sheriff's business, but he was also required to clean the courthouse, plant trees, and conduct an annual census of school-age children.
 
