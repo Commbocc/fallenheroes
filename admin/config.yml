@@ -6,6 +6,34 @@ backend:
   branch: master
 media_folder: 'assets/uploads'
 collections:
+  - label: 'Site settings'
+    name: 'site'
+    files:
+      - label: 'Settings'
+        name: 'settings'
+        file: '_data/site_settings.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Site Name,
+              name: sitename,
+              widget: string,
+              hint: 'This is used for the site title',
+            }
+          - label: 'Navigation Items'
+            name: 'nav_items'
+            widget: 'list'
+            required: true
+            field:
+              - label: 'Item'
+                name: 'item'
+                widget: 'object'
+                fields:
+                  - { name: 'label', label: 'Label' }
+                  - { name: 'url', label: 'URL' }
+
   - name: 'heroes'
     label: 'Fallen Hero'
     folder: '_posts/'
