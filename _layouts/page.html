@@ -3,16 +3,12 @@ layout: default
 ---
 
 <ol class="breadcrumb small">
-	<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-	<li class="active">{{ page.title }}</li>
+  <li><a href="/">Home</a></li>
+  <li class="active">{{ page.title }}</li>
 </ol>
 
 <header class="page-header">
-	<h2>
-		{{ page.title }}
-	</h2>
+  <h2>{{ page.title }}</h2>
 </header>
 
-<div class="post-content">
-	{{ content }}
-</div>
+<div class="post-content">{{ content }}</div>

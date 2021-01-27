@@ -1,0 +1,24 @@
+{
+  "nav_items": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "About the Program",
+      "url": "/about"
+    },
+    {
+      "label": "Memorial Pages",
+      "url": "/memorial"
+    },
+    {
+      "label": "Heroes Plaza",
+      "url": "/plaza"
+    },
+    {
+      "label": "Donations",
+      "url": "/donate"
+    }
+  ]
+}

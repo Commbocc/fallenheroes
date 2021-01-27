@@ -29,8 +29,21 @@ collections:
         editor:
           preview: true
         fields:
-          - { label: Heading, name: heading, widget: string }
+          - { label: Heading, name: title, widget: string }
           - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - label: 'Settings'
+        name: 'settings'
+        file: '_data/settings.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Google Analytics,
+              name: google_analytics,
+              widget: string,
+              required: false,
+            }
 
   - name: 'heroes'
     label: 'Fallen Hero'
