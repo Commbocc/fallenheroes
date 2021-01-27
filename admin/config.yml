@@ -113,7 +113,7 @@ collections:
     create: true
     slug: '{{permalink}}'
     fields:
-      - { name: name, label: 'Name' }
+      - { name: title, label: 'Name' }
       - { name: permalink, label: 'Abbreviation' }
       - { name: ext_link, label: 'External Link', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
