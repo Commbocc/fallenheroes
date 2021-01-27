@@ -1,5 +1,6 @@
 # config.yml
 
+publish_mode: editorial_workflow
 backend:
   name: git-gateway
   branch: master
@@ -12,15 +13,27 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{name}}'
     fields:
       - { name: name, label: 'Name' }
-      - { name: dob, label: 'Date of Birth', widget: 'date', required: false }
-      - { name: date, label: 'Date of Death', widget: 'date', required: true }
+      - {
+          name: dob,
+          label: 'Date of Birth',
+          widget: 'date',
+          required: false,
+          formate: 'YYYY-MM-DD',
+        }
+      - {
+          name: date,
+          label: 'Date of Death',
+          widget: 'date',
+          required: true,
+          formate: 'YYYY-MM-DD',
+        }
       - {
           name: circa,
           label: 'Approximate Dates',
           widget: 'boolean',
           required: false,
           default: false,
-          summary: 'Enable this option when exact dates are unknown',
+          hint: 'Enable this option when exact dates are unknown',
         }
       - {
           label: 'Organization',
@@ -31,7 +44,7 @@ collections:
           value_field: 'permalink',
           display_fields: ['name'],
         }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
       - {
           label: 'Images',
           name: 'images',
@@ -47,4 +60,5 @@ collections:
     fields:
       - { name: name, label: 'Name' }
       - { name: permalink, label: 'Abbreviation' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { name: ext_link, label: 'External Link', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
