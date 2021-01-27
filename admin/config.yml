@@ -1,27 +1,20 @@
 # config.yml
 
-publish_mode: editorial_workflow
 backend:
   name: git-gateway
   branch: master
 media_folder: 'assets/uploads'
 collections:
-  - label: 'Site settings'
+  - label: 'Site Settings'
     name: 'site'
     files:
-      - label: 'Settings'
-        name: 'settings'
-        file: '_data/site_settings.json'
+      - label: 'Navigation'
+        name: 'navigation'
+        file: '_data/navigation.json'
         format: 'json'
         editor:
           preview: false
         fields:
-          - {
-              label: Site Name,
-              name: sitename,
-              widget: string,
-              hint: 'This is used for the site title',
-            }
           - label: 'Navigation Items'
             name: 'nav_items'
             widget: 'list'
@@ -29,6 +22,15 @@ collections:
             fields:
               - { name: 'label', label: 'Label', widget: 'string' }
               - { name: 'url', label: 'URL', widget: 'string' }
+      - label: 'Home Page'
+        name: 'home'
+        file: '_data/home_page.json'
+        format: 'json'
+        editor:
+          preview: true
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: true }
 
   - name: 'heroes'
     label: 'Fallen Hero'
@@ -76,6 +78,22 @@ collections:
           required: false,
           field: { label: 'Image', name: 'image', widget: 'image' },
         }
+  - name: 'pages'
+    label: 'Page'
+    folder: '_pages/'
+    create: true
+    slug: '{{permalink}}'
+    fields:
+      - { name: title, label: 'Title' }
+      - { name: permalink, label: 'Slug' }
+      - {
+          name: layout,
+          label: 'External Link',
+          widget: 'select',
+          options: ['page', 'home'],
+          default: 'page',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
   - name: 'organizations'
     label: 'Organization'
     folder: '_organizations/'
