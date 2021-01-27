@@ -12,19 +12,23 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{name}}'
     fields:
       - { name: name, label: 'Name' }
+      - { name: dob, label: 'Date of Birth', widget: 'date', required: false }
+      - { name: date, label: 'Date of Death', widget: 'date', required: true }
       - {
-          name: category,
-          label: 'Category',
-          widget: 'select',
-          options: ['left', 'center', 'right'],
+          name: circa,
+          label: 'Approximate Dates',
+          widget: 'boolean',
+          required: false,
+          default: false,
+          summary: 'Enable this option when exact dates are unknown',
         }
       - {
           label: 'Organization',
-          name: 'organization',
+          name: 'categories',
           widget: 'relation',
           collection: 'organizations',
-          search_fields: ['name', 'abbreviation'],
-          value_field: 'name',
+          search_fields: ['name', 'permalink'],
+          value_field: 'permalink',
           display_fields: ['name'],
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
@@ -39,8 +43,8 @@ collections:
     label: 'Organization'
     folder: '_organizations/'
     create: true
-    slug: '{{name}}'
+    slug: '{{permalink}}'
     fields:
       - { name: name, label: 'Name' }
-      - { name: abbreviation, label: 'Abbreviation' }
+      - { name: permalink, label: 'Abbreviation' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
