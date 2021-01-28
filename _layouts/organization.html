@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<ol class="breadcrumb small">
+  <li><a href="/">Home</a></li>
+  <li>
+    <a href="/memorial">Memorial Pages</a>
+  </li>
+  <li class="active">{{ page.title }}</li>
+</ol>
+
+<header class="page-header">
+  <h2>
+    {{ page.title }} {% if page.ext_link %}
+    <small
+      ><a href="{{ page.ext_link }}" target="_blank"
+        ><i class="fa fa-fw fa-external-link"></i></a
+    ></small>
+    {% endif %}
+  </h2>
+</header>
+
+{% unless page.content == '' %} {{ content }} {% endunless %}
+
+<hr />
+
+{% if site.categories[page.permalink] %}
+
+<ul class="list-unstyled list-fallen-heroes">
+  {% for post in site.categories[page.permalink] %}
+  <!--  -->
+  <li class="fallen-hero">
+    <a class="thumbnail" href="{{ post.url }}">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="embed-responsive embed-responsive-1by1 text-center">
+            {% if post.images %} {% capture rm_date_str %}{{ post.date | date:
+            "%Y-%m-%d-" }}{% endcapture %}
+            <img
+              src="{{ post.images.first }}"
+              alt="{{post.name}}"
+              class="img-responsive center-block"
+            />
+            {% else %}
+            <i
+              class="text-muted fa fa-fw fa-file-image-o fa-3x media-object"
+            ></i>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-xs-9">
+          <h4 class="">
+            {{ post.name }}
+            <div class="small">
+              {% if post.dob %}{{ post.dob | date: "%b %-d, %Y" }} - {% endif %}
+              {% if post.circa %}<abbr title="circa">c.</abbr> {{ post.date |
+              date: "%Y" }}{% else %}{{ post.date | date: "%b %-d, %Y" }}{%
+              endif %}
+            </div>
+          </h4>
+        </div>
+      </div>
+    </a>
+  </li>
+
+  {% endfor %}
+</ul>
+
+{% else %}
+
+<p class="text-center">
+  <em> {{ page.title }} has not lost officers in the line of duty. </em>
+</p>
+
+{% endif %}

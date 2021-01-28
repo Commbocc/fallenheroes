@@ -2,12 +2,10 @@
 
 	<p class="text-center">
 		<ul class="list-inline text-center">
-			{% for link in site.data.menu_nav %}
-			{% if link.title %}
+			{% for link in site.data.navigation.nav_items %}
 			<li>
-				<a href="{{ link.href | prepend: site.baseurl }}" class="{{ link.class }}">{{ link.title }}</a>
+				<a href="{{ link.url }}" >{{ link.label }}</a>
 			</li>
-			{% endif %}
 			{% endfor %}
 		</ul>
 	</p>
@@ -27,11 +25,3 @@
 
 </footer>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-{% for asset in site.data.assets.js %}
-{% if asset.remote %}
-<script src="{{asset.src}}"></script>
-{% else %}
-<script src="{{site.baseurl}}/javascripts/{{asset.src}}"></script>
-{% endif %}
-{% endfor %}

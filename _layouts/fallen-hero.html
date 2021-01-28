@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<ol class="breadcrumb small">
+  <li><a href="/">Home</a></li>
+  <li><a href="/memorial">Memorial Pages</a></li>
+  <li>
+    <a href="/{{ page.categories.first }}"
+      >{{ page.categories.first | upcase }}</a
+    >
+  </li>
+  <li class="active">{{ page.name }}</li>
+</ol>
+
+<header class="page-header">
+  <h2>
+    {{ page.name }}
+    <br />
+    <small>
+      {% if page.dob %}{{ page.dob | date: "%b %-d, %Y" }} - {% endif %} {% if
+      page.circa %}<abbr title="circa">c.</abbr> {{ page.date | date: "%Y" }}{%
+      else %}{{ page.date | date: "%b %-d, %Y" }}{% endif %}
+    </small>
+  </h2>
+</header>
+
+<div class="row">
+  <div class="">
+    <div class="col-sm-3">
+      <p class="text-center">
+        {% if page.images %}
+        <img
+          src="{{ page.images.first }}"
+          alt="{{ page.name }}"
+          class="img-thumbnail center-block"
+        />
+        {% else %}
+        <i class="fa fa-fw fa-file-image-o fa-5x"></i>
+        {% endif %}
+      </p>
+    </div>
+    <div class="col-sm-9">{{ content }}</div>
+  </div>
+</div>
+
+{% if page.images %}
+<div class="text-center">
+  <hr />
+  <ul class="list-inline">
+    {% for image in page.images offset: 1 %}
+    <li>
+      <img
+        src="{{ image }}"
+        alt="{{page.name}}"
+        class="img-thumbnail center-block"
+      />
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
