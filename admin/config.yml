@@ -79,9 +79,9 @@ collections:
           name: 'categories',
           widget: 'relation',
           collection: 'organizations',
-          search_fields: ['name', 'permalink'],
+          search_fields: ['title', 'permalink'],
           value_field: 'permalink',
-          display_fields: ['name'],
+          display_fields: ['title'],
         }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
       - {
