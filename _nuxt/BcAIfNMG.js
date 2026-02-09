@@ -1,0 +1,1 @@
+import{n as r,o as c,c as l,r as p,p as u,y as d,z as e}from"./LF9AkiVI.js";const m={base:"bg-muted"},h={__name:"ProseThead",props:{class:{type:null,required:!1}},setup(s){const a=s,t=r(),o=d(()=>e({extend:e(m),...t.ui?.prose?.thead||{}}));return(n,i)=>(c(),l("thead",{class:u(o.value({class:a.class}))},[p(n.$slots,"default")],2))}};export{h as default};

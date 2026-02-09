@@ -1,0 +1,1 @@
+import{n,o as r,c,r as p,p as u,y as i,z as s}from"./LF9AkiVI.js";const m={base:"my-1.5 ps-1.5 leading-7 [&>ul]:my-0"},_={__name:"ProseLi",props:{class:{type:null,required:!1}},setup(e){const a=e,o=n(),l=i(()=>s({extend:s(m),...o.ui?.prose?.li||{}}));return(t,d)=>(r(),c("li",{class:u(l.value({class:a.class}))},[p(t.$slots,"default")],2))}};export{_ as default};
