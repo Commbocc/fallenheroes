@@ -1,1 +1,0 @@
-import{n as r,o as c,c as l,r as p,p as u,y as d,z as s}from"./LF9AkiVI.js";const i={base:""},y={__name:"ProseTbody",props:{class:{type:null,required:!1}},setup(e){const o=e,a=r(),t=d(()=>s({extend:s(i),...a.ui?.prose?.tbody||{}}));return(n,m)=>(c(),l("tbody",{class:u(t.value({class:o.class}))},[p(n.$slots,"default")],2))}};export{y as default};

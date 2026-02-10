@@ -1,1 +1,0 @@
-import{n as r,o as c,c as l,r as p,p as u,y as i,z as s}from"./LF9AkiVI.js";const m={base:""},g={__name:"ProseStrong",props:{class:{type:null,required:!1}},setup(e){const o=e,a=r(),t=i(()=>s({extend:s(m),...a.ui?.prose?.strong||{}}));return(n,f)=>(c(),l("strong",{class:u(t.value({class:o.class}))},[p(n.$slots,"default")],2))}};export{g as default};
