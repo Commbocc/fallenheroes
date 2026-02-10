@@ -28,6 +28,6 @@ useBreadcrumbs([
 
 <template>
   <article class="prose mx-auto">
-    <ContentRenderer v-if="page" :value="page" />
+    <ContentRenderer v-if="page" :value="page" :prose="false" />
   </article>
 </template>

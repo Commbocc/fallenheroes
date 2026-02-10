@@ -10,4 +10,4 @@ Firefighter Gregory Reeher was born in Rochester, Pennsylvania. He was a firefig
 
 He was married to Sara Reeher and together they had two daughters, Casey and Kayleigh. His daughter Kayleigh Cooper says that friends and family remember Firefighter Reeher as a man dedicated to his family and his community. He was a Harley-Davidson rider, who loved his dog, and talking about history and trips to England.
 
-- [**Copter Crashes into Roof**](/media/copter-crashes-into-roof.pdf) - St. Petersburg Times Article, June 4, 2002
+- [**Copter Crashes into Roof**](/media/copter-crashes-into-roof.pdf){target=_blank} - St. Petersburg Times Article, June 4, 2002

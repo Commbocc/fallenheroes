@@ -10,6 +10,21 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    preset: "static",
+    prerender: {
+      crawlLinks: true,
+    },
+  },
+
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: "append",
+      },
+    },
+  },
+
   css: ["~/assets/css/main.css"],
 
   modules: [
@@ -28,6 +43,8 @@ export default defineNuxtConfig({
     enabled: process.env.NODE_ENV === "production",
     id: "G-9KF9R8N2VK",
   },
+
+  content: {},
 
   devtools: { enabled: true },
 });

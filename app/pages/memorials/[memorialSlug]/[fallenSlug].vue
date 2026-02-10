@@ -12,7 +12,7 @@ const { data: memorial } = await useAsyncData(
       .select("title", "path")
       .path(`/memorials/${route.params.memorialSlug}`)
       .first();
-  }
+  },
 );
 
 if (!page.value) {
@@ -54,7 +54,7 @@ useBreadcrumbs([
       <PersonDates v-if="page" :person="page" />
     </p>
 
-    <ContentRenderer v-if="page" :value="page" />
+    <ContentRenderer v-if="page" :value="page" :prose="false" />
   </article>
 </template>
 

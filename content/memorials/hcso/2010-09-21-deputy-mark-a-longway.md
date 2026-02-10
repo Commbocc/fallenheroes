@@ -28,7 +28,7 @@ Deputy Longway, thank you for your service to our nation and to our county. We a
 
 ![Deputy Mark A. Longway](/uploads/deputy-mark-a-longway-2.jpg)
 ![Deputy Mark A. Longway](/uploads/deputy-mark-a-longway-3.jpg)
-![Deputy Mark A. Longway](uploads/deputy-mark-a-longway-4.jpg)
+![Deputy Mark A. Longway](/uploads/deputy-mark-a-longway-4.jpg)
 
 ::BodyVideo
 

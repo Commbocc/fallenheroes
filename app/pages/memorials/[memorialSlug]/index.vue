@@ -38,7 +38,7 @@ const { data: fallen } = await useAsyncData(
       .select("id", "name", "path", "image", "dob", "date", "circa")
       .limit(-1)
       .all();
-  }
+  },
 );
 </script>
 
@@ -55,7 +55,7 @@ const { data: fallen } = await useAsyncData(
       </a>
     </h1>
 
-    <ContentRenderer v-if="page" :value="page" />
+    <ContentRenderer v-if="page" :value="page" :prose="false" />
 
     <hr />
 
