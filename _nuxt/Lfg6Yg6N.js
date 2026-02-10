@@ -1,1 +1,0 @@
-import{f as t,o as s,c as r,r as d,d as n}from"./eaNkg4ZE.js";const a={controls:"",width:"100%"},i=t({__name:"BodyVideo",setup(c){return(e,o)=>(s(),r("video",a,[d(e.$slots,"default"),o[0]||(o[0]=n(" Your browser does not support the video tag. ",-1))]))}}),_=Object.assign(i,{__name:"BodyVideo"});export{_ as default};
