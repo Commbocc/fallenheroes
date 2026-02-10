@@ -17,7 +17,7 @@ const imageSrc = computed(() => {
 </script>
 
 <template>
-  <UPageCard variant="ghost" :to="person.path">
+  <UPageCard variant="ghost" :to="person.path" :aria-label="person.name">
     <template #body>
       <UUser
         :name="person.name"
